@@ -1,11 +1,10 @@
 
 import React, { useState, useEffect } from 'react';
-import { ViewState, QuizAnswer } from './types';
-import { EXPERT_DATA } from './constants';
-import InitialSelection from './components/InitialSelection';
-import Quiz from './components/Quiz';
-import QuizResult from './components/QuizResult';
-import MainSite from './components/MainSite';
+import { ViewState, QuizAnswer } from './types.ts';
+import InitialSelection from './components/InitialSelection.tsx';
+import Quiz from './components/Quiz.tsx';
+import QuizResult from './components/QuizResult.tsx';
+import MainSite from './components/MainSite.tsx';
 
 const App: React.FC = () => {
   const [view, setView] = useState<ViewState>(ViewState.INITIAL);
@@ -21,7 +20,6 @@ const App: React.FC = () => {
 
   const handleGoToSiteFromResult = () => setView(ViewState.MAIN);
 
-  // Smooth scroll to top on view change
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [view]);
